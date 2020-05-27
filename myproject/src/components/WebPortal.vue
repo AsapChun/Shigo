@@ -400,7 +400,7 @@
         },
         methods:{
             submit() {
-                console.log("webportal signin")
+                console.log("webportal signin");
                 firebase
                     .auth()
                     //access the form above and uses the firebase function
