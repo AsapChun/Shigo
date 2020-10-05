@@ -78,7 +78,7 @@
                 .signInWithEmailAndPassword(this.form.email, this.form.password)
                 .then( data => {
                     //sign in successful
-                    data.valueOf()
+                    data.valueOf();
                     this.$router.replace(({name: "UserHome"}))
                 })
                 .catch(err =>{

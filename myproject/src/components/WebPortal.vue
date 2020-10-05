@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Nuno - Responsive Bootstrap Theme</title>
+        <title>WebPortal</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
     </head>
@@ -12,8 +12,8 @@
 
 
             <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <b-carousel ref="carouselExampleIndicatorsRecruiter" class="carousel slide" data-interval="false" data-wrap = "false">
+                <div ref="carouselExampleIndicatorsRecruiter" class="modal-content"> <!-- ref="carouselExampleIndicatorsRecruiter" data-ride="carousel" data-pause="hover" data-wrap = "false"-->
+                    <b-carousel  class="carousel slide" data-interval="false" >
                         <div class="carousel-inner">
                             <div class="carousel-item active">
                                 <div class="form-style-5">
@@ -32,7 +32,9 @@
                                 </div>
                                 <div class= "testing">
                                     <div class="carosal-button-next">
-                                        <button class="submit2" href="#carouselExampleIndicatorsRecruiter" @click="nextRecruiter" data-slide="next">Next</button>
+                                        <!--class="submit2" href="#carouselExampleIndicatorsRecruiter"  data-slide="next"
+                                        v-on:click="setPosition(document.getElementById('job'), $event)" -->
+                                        <button @click= "setPosition(document.getElementById('job'), $event)">Continue</button>
                                     </div>
                                 </div>
                             </div>
@@ -79,12 +81,15 @@
                                     </form>
                                 </div>
                                 <div class= "testing">
+                                    <!--
                                     <div class="carosal-button-prev">
                                         <button class="submit2" href="#carouselExampleIndicatorsRecruiter" @click="prevRecruiter" data-slide="prev">Prev</button>
                                     </div>
+                                    -->
                                     <div class="carosal-button-next">
                                         <button class="submit2" href="#carouselExampleIndicatorsRecruiter" @click="nextRecruiter" data-slide="next">Next</button>
                                     </div>
+
                                 </div>
                             </div>
                             <div class="carousel-item">
@@ -97,9 +102,11 @@
                                     </form>
                                 </div>
                                 <div class= "testing">
+                                    <!--
                                     <div class="carosal-button-prev">
                                         <button class="submit2" href="#carouselExampleIndicatorsRecruiter" @click="prevRecruiter" data-slide="prev">Prev</button>
                                     </div>
+                                    -->
                                     <div class="carosal-button-next">
                                         <button class="submit2" href="#carouselExampleIndicatorsRecruiter" @click="nextRecruiter" data-slide="next">Next</button>
                                     </div>
@@ -116,8 +123,12 @@
                                             </div>
                                         </fieldset>
                                     </form>
+                                    <div class="carosal-button-next">
+                                        <button class="submit2" href="#carouselExampleIndicatorsRecruiter" @click="nextRecruiter" data-slide="next">Create Account</button>
+                                    </div>
                                 </div>
                                 <div class= "testing">
+
                                     <div class="carosal-button-prev">
                                         <button class="submit2" href="#carouselExampleIndicatorsRecruiter" @click="prevRecruiter" data-slide="prev">Prev</button>
                                     </div>
@@ -134,18 +145,16 @@
 
         <!-- Modal -->
         <b-modal ref = "myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-
-
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
-                    <b-carousel ref="carouselExampleIndicatorsStudent" class="carousel slide" data-interval="false" data-wrap = "false">
+                    <b-carousel ref="carouselExampleIndicatorsStudent" class="carousel slide" data-interval="false" data-wrap="false">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
                                 <div class="form-style-5">
                                     <form>
                                         <fieldset>
                                             <legend><span class="number text-center">1</span>What are you looking for?</legend>
-                                            <select name="field4">
+                                            <select id="getSeek" name="field4">
                                                 <optgroup label="Job-Seeking Status">
                                                     <option value="Full-Time">Seeking Full-Time Position</option>
                                                     <option value="Part-Time">Seeking Part-Time Position</option>
@@ -157,7 +166,9 @@
                                 </div>
                                 <div class= "testing">
                                     <div class="carosal-button-next">
-                                        <button class="submit2" href="#carouselExampleIndicatorsStudent" @click="nextStudent" data-slide="next">Next</button>
+                                        <!-- <button v-on:click="setPosition(document.getElementById('getSeek'), $event)"> Next</button> -->
+                                      <!--   <button @click= "setPosition(document.getElementById('getSeek'), $event)">Continue</button> -->
+                                       <button class="submit2" href="#carouselExampleIndicatorsStudent" @click="nextPosition"> Next </button>
                                     </div>
                                 </div>
                             </div>
@@ -166,7 +177,7 @@
                                     <form>
                                         <fieldset>
                                             <legend><span class="number text-center">2</span>What is your primary major?</legend>
-                                            <select name="field4">
+                                            <select id="Major" name="field4">
                                                 <optgroup label="Major/Academic-Background #1">
                                                     <option value="Business">Business</option>
                                                     <option value="Computer-Science">Computer Science</option>
@@ -174,7 +185,7 @@
                                                 </optgroup>
                                             </select>
                                             <legend>What is your secondary major (if applicable)?</legend>
-                                            <select name="field4">
+                                            <select id="Minor" name="field4">
                                                 <optgroup label="Major/Academic-Background #2">
                                                     <option value="Business">Business</option>
                                                     <option value="Computer-Science">Computer Science</option>
@@ -186,11 +197,12 @@
                                     </form>
                                 </div>
                                 <div class= "testing">
+                                    <!--
                                     <div class="carosal-button-prev">
                                         <button class="submit2" href="#carouselExampleIndicatorsStudent" @click="prevStudent" data-slide="prev">Prev</button>
-                                    </div>
+                                    </div> -->
                                     <div class="carosal-button-next">
-                                        <button class="submit2" href="#carouselExampleIndicatorsStudent" @click="nextStudent" data-slide="next">Next</button>
+                                        <button class="submit2" href="#carouselExampleIndicatorsStudent" @click="nextMajors">Next</button>
                                     </div>
                                 </div>
                             </div>
@@ -199,16 +211,18 @@
                                     <form>
                                         <fieldset>
                                             <legend><span class="number text-center">3</span>What industries are you interested in working in?</legend>
-                                            <input type="text" name="Industry-Interests" placeholder="Please seperate interests by a comma (e.g Sales, Design, Marketing...)">
+                                            <input id="industries" type="text" name="Industry-Interests" placeholder="Please seperate interests by a comma (e.g Sales, Design, Marketing...)">
                                         </fieldset>
                                     </form>
                                 </div>
                                 <div class= "testing">
+                                    <!--
                                     <div class="carosal-button-prev">
                                         <button class="submit2" href="#carouselExampleIndicatorsStudent" @click="prevStudent" data-slide="prev">Prev</button>
                                     </div>
+                                    -->
                                     <div class="carosal-button-next">
-                                        <button class="submit2" href="#carouselExampleIndicatorsStudent" @click="nextStudent" data-slide="next">Next</button>
+                                        <button class="submit2" href="#carouselExampleIndicatorsStudent" @click="nextIndustry" data-slide="next">Next</button>
                                     </div>
                                 </div>
                             </div>
@@ -217,38 +231,53 @@
                                     <form>
                                         <fieldset>
                                             <legend><span class="number text-center">4</span>What are your personal skills?</legend>
-                                            <input type="text" name="Industry-Interests" placeholder="Please seperate skills by a comma (e.g Front-End, Strategy, C++...)">
+                                            <input id="skills" type="text" name="Industry-Interests" placeholder="Please seperate skills by a comma (e.g Front-End, Strategy, C++...)">
                                         </fieldset>
                                     </form>
                                 </div>
                                 <div class= "testing">
+                                    <!--
                                     <div class="carosal-button-prev">
                                         <button class="submit2" href="#carouselExampleIndicatorsStudent" @click="prevStudent" data-slide="prev">Prev</button>
                                     </div>
+                                    -->
                                     <div class="carosal-button-next">
-                                        <button class="submit2" href="#carouselExampleIndicatorsStudent" @click="nextStudent" data-slide="next">Next</button>
+                                        <button class="submit2" href="#carouselExampleIndicatorsStudent" @click="nextSkills" data-slide="next">Next</button>
                                     </div>
                                 </div>
                             </div>
                             <div class="carousel-item">
                                 <div class="form-style-5">
                                     <form>
+
                                         <fieldset>
+
+                                            <!--
                                             <legend><span class="number text-center">5</span>Please upload your resume! We will display this for recruiters, much like how you would hand them your resume at a career fair!</legend>
+                                            -->
                                             <div class="upload-btn-wrapper">
-                                                <input type="file" name="resume">
-                                                <button class="btn-resume-upload" onclick="fff(); return false;">Upload Resume</button>
+                                                <button class="btn-create-account" v-on:click="signup">Create Account</button>
+                                                <!--
+                                                <form action="/action_page.php">
+                                                    <button id="resume" type="file" name="resume">Upload file</button>
+                                                    <button type="submit" @click="signup"> Create Profile </button>
+                                                    <button class="btn-resume-upload" onclick="">Upload Resume</button>
+                                                </form>
+                                                -->
                                             </div>
+
                                         </fieldset>
+
                                     </form>
                                 </div>
                                 <div class= "testing">
-                                    <div class="carosal-button-prev">
+                                   <!-- <div class="carosal-button-prev">
                                         <button class="submit2" href="#carouselExampleIndicatorsStudent" @click="prevStudent" data-slide="prev">Prev</button>
-                                    </div>
-                                    <div class="carosal-button-next">
+                                    </div> -->
+                                    <!--<div class="carosal-button-next">
                                         <button class="submit2" href="#carouselExampleIndicatorsStudent" @click="nextStudent" data-slide="next">Next</button>
                                     </div>
+                                    -->
                                 </div>
                             </div>
                         </div>
@@ -380,7 +409,9 @@
 
             document.querySelector('.img__btn').addEventListener('click', function () {
                 document.querySelector('.cont').classList.toggle('s--signup')
-            })
+            });
+
+            firebase.valueOf();
 
         },
         data(){
@@ -393,7 +424,13 @@
                 registerform:{
                     name:"",
                     email:"",
-                    password:""
+                    password:"",
+                    personType:"",
+                    PosSeeking:"",
+                    PriMajor:"",
+                    SecMajor:"",
+                    IntIndustry:[],
+                    Skills:[]
                 },
                 error: null,
             };
@@ -416,43 +453,123 @@
                         console.log("Sign In with email and password error: "+ this.error)
                     });
             },
-            signin(){
-                    var element = document.getElementById("student-recruiter").value;
-                    if (element == "Error"){
-                        document.getElementById("student-recruiter-label").innerHTML = 'Please indicate if you are a student or recruiter';
-                        document.getElementById("student-recruiter-label").style.color = '#FF0000';
-                        alert("Please indicate if you are a student or recruiter to proceed with sign-up.");
-                        return;
-                    } else if (element == "Student"){
-                        this.$refs['myModal'].show();
-                    } else {
-                        this.$refs['myModalRecruiter'].show();
-                       // document.getElementById("myModalRecruiter").modal("toggle");
-                    }
-
-                /*
+            signin() {
+                var element = document.getElementById("student-recruiter").value;
+                if (element == "Error") {
+                    document.getElementById("student-recruiter-label").innerHTML = 'Please indicate if you are a student or recruiter';
+                    document.getElementById("student-recruiter-label").style.color = '#FF0000';
+                    alert("Please indicate if you are a student or recruiter to proceed with sign-up.");
+                    return;
+                } else if (element == "Student") {
+                     //TODO:FIX SLIDING CAROUSEL
+                    this.registerform.personType = element;
+                    this.$refs['myModal'].show();
+                } else {
+                    this.$refs['myModalRecruiter'].show();
+                    // document.getElementById("myModalRecruiter").modal("toggle");
+                }
+            },
+            //Handles both resume and sign up procedures
+            signup(){
                 console.log("webportal register");
                 console.log("email: "+ this.registerform.email + "; password: "+ this.registerform.password);
+               // var storage = firebase.storage();
+                var db = firebase.firestore();
                 firebase
                     .auth()
                     //takes the inputs from the form object above and uses the firebase function
                     .createUserWithEmailAndPassword(this.registerform.email, this.registerform.password)
                     //promise handler
                     .then(data =>{
-                        data.user
+                            data.user
                             //adds the user name to firebase user object
                             .updateProfile({
-                                displayName: this.registerform.name
+                                displayName: this.registerform.name,
                             })
                             .then(() => {
+                                    db.collection("userPreferences")
+                                    .doc(data.user.uid)
+                                    .set({
+                                        Name: this.registerform.name,
+                                        PersonType: this.registerform.personType,
+                                        PrimaryMajor: this.registerform.PriMajor,
+                                        SecondaryMajor: this.registerform.SecMajor,
+                                        PositionSeeking: this.registerform.PosSeeking,
+                                        Industry: this.registerform.IntIndustry,
+                                        // Resume: this.registerform.resume,
+                                        Skills: this.registerform.Skills
+                                    }).then(function(docRef) {
+                                    console.log("Document written with ID: ", docRef.id);
+                                }).catch(function (error) {
+                                    console.error("Error adding document: "+ error);
+                                });
+
                                 this.$router.replace(({name: "UserHome"}))
                             });
                     }) // error handler
                     .catch((err => {
                         this.error=err.message;
+                        window.alert(err.message);
+                        console.log("signup unsuccessful");
                     }));
 
-                 */
+
+            },
+            //TODO: FIX MOVING CAROUSAL
+            nextPosition(){
+                const e = document.getElementById("getSeek");
+                const val = e.options[e.selectedIndex].value;
+                this.registerform.PosSeeking = val;
+                console.log("PosSeeking: "+ this.registerform.PosSeeking);
+                this.$refs.carouselExampleIndicatorsStudent.next();
+            },
+            nextMajors(){
+                const m = document.getElementById("Major");
+                const major = m.options[m.selectedIndex].value;
+                this.registerform.PriMajor = major;
+                console.log("Primary Major: "+ this.registerform.PriMajor);
+                const n = document.getElementById("Minor");
+                const minor = n.options[n.selectedIndex].value;
+                this.registerform.SecMajor = minor;
+                console.log("Secondary Major: "+ this.registerform.SecMajor);
+                this.$refs.carouselExampleIndicatorsStudent.next();
+            },
+            nextIndustry(){
+                var m = document.getElementById("industries").value;
+                var arr = m.split(', ');
+                this.registerform.IntIndustry = arr;
+                console.log("Industries: " + this.registerform.IntIndustry);
+                this.$refs.carouselExampleIndicatorsStudent.next();
+            },
+            nextSkills(){
+                var skills = document.getElementById("skills").value;
+                var arr = skills.split(', ');
+                this.registerform.Skills = arr;
+                console.log("Personal Skills: " + this.registerform.Skills);
+                this.$refs.carouselExampleIndicatorsStudent.next();
+            },
+            nextStudent(){
+                console.log("sadfdsafsafa");
+                const e = document.getElementById("getSeek");
+                const val = e.options[e.selectedIndex].value;
+                this.registerform.PosSeeking = val;
+                console.log("PosSeeking: "+ this.registerform.PosSeeking);
+                this.$refs.carouselExampleIndicatorsStudent.next();
+            },
+
+            setPersonType(input){
+              this.registerform.personType = input;
+            },
+            setIndustry(input){
+                //TODO: Input will be a array of choices
+                this.registerform.IntIndustry= input;
+            },
+            setMajors(a ,b){
+                this.registerform.PriMajor = a;
+                this.registerform.SecMajor = b;
+            },
+            setResume(){
+                //TODO: input will be a file need to figure this out
             },
             nextRecruiter(){
                 this.$refs.carouselExampleIndicatorsRecruiter.next()
@@ -460,12 +577,10 @@
             prevRecruiter(){
                 this.$refs.carouselExampleIndicatorsRecruiter.prev();
             },
-            nextStudent(){
-                this.$refs.carouselExampleIndicatorsStudent.next();
-            },
+
             prevStudent(){
                 this.$refs.carouselExampleIndicatorsStudent.prev();
-            }
+            },
         }
     }
 </script>
@@ -943,6 +1058,13 @@
 
     .student-recruiter-div {
         padding-bottom: 5px!important;
+    }
+
+    .btn-create-account{
+        font-size: 13px;
+        color: #1EBBA3;
+        border: 2px solid #1EBBA3;
+        background-color: black;
     }
 
     #sign-up-button {

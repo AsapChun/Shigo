@@ -6,9 +6,12 @@ import store from "@/store";
 import LoadScript from 'vue-plugin-load-script';
 import React from 'react';
 import {BootstrapVue, IconsPlugin} from 'bootstrap-vue'
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
 //import $ from 'jquery';
-
+// Install BootstrapVue
 Vue.use(BootstrapVue);
+// Optionally install the BootstrapVue icon components plugin
 Vue.use(IconsPlugin);
 
 global.jQuery = require('jquery');
@@ -57,7 +60,10 @@ const firebaseConfig = {
   measurementId: "G-EDK1PB0X68"
 };
 
+
+
 firebase.initializeApp(firebaseConfig);
+
 
 firebase.auth().onAuthStateChanged(user => {
   store.dispatch("fetchUser", user);

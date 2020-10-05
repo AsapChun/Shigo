@@ -8,6 +8,7 @@ import Linkedin from "@/components/Linkedin";
 import WebPortal from "@/components/WebPortal";
 //import CreateZoomMeeting from "@/components/Zoom /CreateZoomMeeting";
 import Meeting from "@/components/Zoom /Meeting";
+import SettingComponent from "@/components/Dashboard-components/Settings-Component";
 
 /* eslint-disable */
 Vue.use(VueRouter);
@@ -65,6 +66,11 @@ Vue.use(VueRouter);
       path: '/setPreferences',
       name: 'setPreferences',
       component: () => import('../views/SetPreferences')
+    },
+    {
+      path: '/Dashboard-components/Settings-Component',
+      name: 'SettingsComponent',
+      component: SettingComponent
     }
 ];
 

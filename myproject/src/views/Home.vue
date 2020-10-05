@@ -4,7 +4,7 @@
       <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
     <body data-spy="scroll" data-target="#navbarResponsive">
       <nav class = "navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-      <a class = "navbar-brand" href="#"><img src = "https://upload.wikimedia.org/wikipedia/en/thumb/8/8e/Philadelphia_Eagles_logo.svg/191px-Philadelphia_Eagles_logo.svg.png"></a>
+      <a class = "navbar-brand" href="#"><img src = "../assets/shigo-logo.jpg" ></a>
       <button class = "navbar-toggler" type="button" data-toggle = "collapse" data-target = "#navbarResponsive">
             <span class="navbar-toggler-icon"></span>
       </button>
@@ -36,9 +36,9 @@
       </div>
 
       <div class="caption text-center">
-          <h1>Welcome to Nuno</h1>
-          <h3>Udemy Bootstrap 4 Course</h3>
-          <a class="btn btn-outline-light btn-lg" href="#course">Get Started</a>
+          <h1>Welcome to Shigo</h1>
+          <h3>A Handshake Made Simple</h3>
+          <a class="btn btn-outline-light btn-lg" href="#course">Learn More!</a>
       </div>
       <!-- End Landing Page Section -->
 
@@ -54,9 +54,11 @@
                       <div class="col-md-6">
                           <div class="feature">
                               <!-- icon -->
-                              <i class="fas fa-play-circle fa-4x" data-fa-transform="shrink-3 up-5"></i>
-                              <h3>Who is TTP3?</h3>
-                              <p>as;kdfsl;fads;fd;asd;askf afdsljdsa;flfda;;sdaf jkadf;lsafa;dslkdsfa;l sadfdas;l;dsflkfasd ;k;f sdj</p>
+                              <div class = "value-logos">
+                                  <img src="../assets/what-icon.png" alt="">
+                              </div>
+                              <h3>What is Shigo?</h3>
+                              <p>A multi-sided job recruiting website for college students that leverages video-conferencing (e.g Zoom's API)</p>
                           </div>
                       </div>
 
@@ -64,9 +66,11 @@
                       <div class="col-md-6">
                           <div class="feature">
                               <!-- icon -->
-                              <i class="fas fa-sliders-h fa-4x" data-fa-transform="shrink-4.5 up-4."></i>
+                              <div class = "value-logos">
+                                <img src="../assets/what2-logo.png" alt="">
+                              </div>
                               <h3>What do we do?</h3>
-                              <p>as;kdfsl;fads;fd;asd;askjka df;lsafa;dslkdsfa;l sadfdas;l;dsflkfasd ;k;f sdj</p>
+                              <p>Students can search for Company Recruiting Events. After clicking through the student can then join a Zoom call with the Recruiter.</p>
                           </div>
                       </div>
                   </div><!-- End of row -->
@@ -84,59 +88,59 @@
               <div class="row dark text-center recruiter">
 
                   <div class="col-12">
-                      <h3 class="heading">The Value Prop.</h3>
+                      <h3 class="heading">Our Mission </h3>
                       <div class="heading-underline"></div>
                   </div>
 
                   <div class="col-md-4">
-                      <h3>HTML 5</h3>
-                      <div class = "feature">
-                          <i class="fas fa-code fa-3x"></i>
+                      <h3>Meet Companies!</h3>
+                      <div class = "value-logos">
+                          <img src="../assets/optimize-logo.png" alt="">
                       </div>
-                      <p class="lead">Built with the latest, HTML 5.</p>
+                      <p class="lead">Optimize your recruiting time</p>
                   </div>
 
                   <div class="col-md-4">
-                      <h3>BOOTSTRAP 4</h3>
-                      <div class = "feature">
-                          <i class="fas fa-bold fa-3x"></i>
+                      <h3>Circumvent Covid</h3>
+                      <div class = "value-logos">
+                          <img src="../assets/connect-icon.png" alt="">
                       </div>
-                      <p class="lead">Built with the latest, Bootstrap 4.</p>
+                      <p class="lead">Meet Recruiters in a virtual platform!</p>
                   </div>
 
                   <div class="col-md-4">
-                      <h3>CSS 3</h3>
-                      <div class = "feature">
-                          <i class="fab fa-css3 fa-3x"></i>
+                      <h3>Personal Interaction</h3>
+                      <div class = "value-logos">
+                          <img src="../assets/meet-icon.png" alt="">
                       </div>
-                      <p class="lead">Built with the latest, CSS 3.</p>
+                      <p class="lead">One-on-One Interaction with Recruiters</p>
                   </div>
 
               </div> <!-- End Row Dark, text-center to center text -->
 
               <div class="row dark text-center student">
                   <div class="col-md-4">
-                      <h3>HTML 5</h3>
-                      <div class = "feature">
-                          <i class="fas fa-code fa-3x"></i>
+                      <h3>Organize</h3>
+                      <div class = "value-logos">
+                          <img src="../assets/organize-logo.png" alt="">
                       </div>
-                      <p class="lead">Built with the latest, HTML 5.</p>
+                      <p class="lead">Schedule multiple meetings on the same day</p>
                   </div>
 
                   <div class="col-md-4">
-                      <h3>BOOTSTRAP 4</h3>
-                      <div class = "feature">
-                          <i class="fas fa-bold fa-3x"></i>
+                      <h3>Follow-up!</h3>
+                      <div class = "value-logos">
+                          <img src="../assets/message-icon.png" alt="">
                       </div>
-                      <p class="lead">Built with the latest, Bootstrap 4.</p>
+                      <p class="lead">Message and follow-up with recruiters</p>
                   </div>
 
                   <div class="col-md-4">
-                      <h3>CSS 3</h3>
-                      <div class = "feature">
-                          <i class="fab fa-css3 fa-3x"></i>
+                      <h3>Gain Information!</h3>
+                      <div class = "value-logos">
+                          <img src="../assets/seminar-logo.png" alt="">
                       </div>
-                      <p class="lead">Built with the latest, CSS 3.</p>
+                      <p class="lead">Join Company Webinars to learn more about the company!</p>
                   </div>
 
               </div>
@@ -154,10 +158,10 @@
               <div class="row justify-content-center">
 
                   <div class="col-md-5 text-center">
-                      <img src="https://upload.wikimedia.org/wikipedia/en/thumb/8/8e/Philadelphia_Eagles_logo.svg/191px-Philadelphia_Eagles_logo.svg.png">
+                      <img src="../assets/shigo-logo.jpg">
                       <p> </p>
                       <strong>Contact Info</strong>
-                      <p>(734) 263-4313<br>vinayak1000@gmail.com</p>
+                      <p>(310)397-4766<br>businessteam@shigo.com</p>
                       <a href="#" target="_blank"><i class="fab fa-facebook-square"></i></a>
                       <a href="#" target="_blank"><i class="fab fa-twitter-square"></i></a>
                       <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
@@ -165,7 +169,7 @@
 
                   <!-- line that goes across page -->
                   <hr class="socket">
-                  &copy; TTP3.
+                  &copy; Shigo LLC.
 
               </div>
           </footer>
@@ -251,9 +255,15 @@
         background: rgba(0,0,0,0.6)!important;
     }
 
+    /*logos in the value proposition*/
+    .value-logos img{
+        height: 7rem;
+
+    }
+
     /*-- height of brand logo! --*/
     .navbar-brand img{
-        height: 2rem;
+        height: 6rem;
     }
     /*-- space out links! --*/
     .navbar-nav li {
