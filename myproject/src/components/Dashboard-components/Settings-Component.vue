@@ -98,17 +98,118 @@
                        </div>
                    </div>
                    <div class="row">
-                       Current Name: {{user.data.displayName}} <br>
-                       UID: {{user.data.uid}} <br>
-                       Primary Major: {{userinfo.PrimaryMajor}}<br>
-                       Secondary Major: {{userinfo.SecondaryMajor}} <br>
-                       Position Seeking: {{userinfo.PositionSeeking}}<br>
+                       <div class="col-sm">
+                            <div class="card" style="width: 18rem;">
+                                <div class="card-image-top">
+                                 <!--   <img  src="../assets/information-icon.png" alt=""> -->
+                                </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Basic Information</h5>
+                                <p class="card-text">
+                                    Current Name: {{user.data.displayName}} <br>
+                                    Email: {{user.data.email}} <br>
+                                    Account Type: {{userinfo.PersonType}} <br>
+                                </p>
+                                <form>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Change Email </label>
+                                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter New email" height="100px">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputPassword1">Change Password</label>
+                                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter New Password">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputPassword1">Change Account Name </label>
+                                        <input class="form-control" id="NewAccountName" placeholder="Enter New Name">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Change Information!</button>
+                                </form>
+                            </div>
+                            </div>
+
+                       </div>
+                       <div class="col-sm">
+                           <div class="card" style="width: 18rem;">
+                               <div class="card-image-top">
+                                   <!--   <img  src="../assets/information-icon.png" alt=""> -->
+                               </div>
+                               <div class="card-body">
+                                   <h5 class="card-title">Education Information</h5>
+                                   <p class="card-text">
+                                       Primary Major: {{userinfo.PrimaryMajor}} <br>
+                                       Secondary Major: {{userinfo.SecondaryMajor}} <br>
+                                       Position Seeking: {{userinfo.PositionSeeking}} <br>
+                                   </p>
+                                   <form>
+                                       <div class="form-group">
+                                           <label for="exampleInputEmail1">Change Primary Major </label>
+                                           <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Enter New Major">
+                                       </div>
+                                       <div class="form-group">
+                                           <label for="exampleInputPassword1">Change Secondary Major</label>
+                                           <input type="password" class="form-control"  placeholder="Enter New Major">
+                                       </div>
+                                       <div class="form-group">
+                                           <label for="exampleFormControlSelect1">Update Position Seeking</label>
+                                           <select class="form-control" id="exampleFormControlSelect1">
+                                               <option>Full Time</option>
+                                               <option>Part-Time</option>
+                                               <option>Internship</option>
+                                           </select>
+                                       </div>
+                                       <button type="submit" class="btn btn-primary">Change Information!</button>
+                                   </form>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+                   <div class="row">
+                       <div class="card w-50">
+                           <div class="card-body">
+                               <h5 class="card-title">Interested Industries</h5>
+                               <ul id="tags">
+                                   <li v-for= "industry in userinfo.Industry" :key="industry.key">
+                                        {{industry}}
+                                   </li>
+                               </ul>
+                               <div class="form-group">
+                                   <h5>Add Interested Industry!</h5>
+                                   <input class="form-control"  placeholder="Enter Industry!">
+                               </div>
+                               <a href="#" class="btn btn-primary">Add Industry</a>
+                               <div class="form-group">
+                                   <h5>Remove Industry!</h5>
+                                   <input class="form-control"  placeholder="Enter Industry!">
+                               </div>
+                               <a href="#" class="btn btn-primary">Delete Industry</a>
+                           </div>
+                       </div>
+                       <div class="card w-50">
+                           <div class="card-body">
+                               <h5 class="card-title">Highlighted Skills</h5>
+                               <ul>
+                                   <li v-for= "skills in userinfo.Skills" :key="skills.key">
+                                       {{skills}}
+                                   </li>
+                               </ul>
+                               <div class="form-group">
+                                   <h5>Add New Skill!</h5>
+                                   <input class="form-control"  placeholder="Enter Skill">
+                               </div>
+                               <a href="#" class="btn btn-primary">Update</a>
+                               <div class="form-group">
+                                   <h5>Remove Skill!</h5>
+                                   <input class="form-control"  placeholder="Enter Skill">
+                               </div>
+                               <a href="#" class="btn btn-primary">Remove</a>
+                           </div>
+                       </div>
+                       <!--
                        Industry: {{userinfo.Industry}}<br>
                        Skills: {{userinfo.Skills}}<br>
-                       Person Type: {{userinfo.PersonType}}
-                       <!-- Person Type: {{userPref.PersonType}} <br>
+                        Person Type: {{userPref.PersonType}} <br>
                       Position Seeking: {{userPref.PositionSeeking}} -->
-
                    </div>
                </main>
 
