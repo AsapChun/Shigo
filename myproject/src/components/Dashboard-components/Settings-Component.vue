@@ -113,17 +113,19 @@
                                 <form>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Change Email </label>
-                                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter New email" height="100px">
+                                        <input type="email" v-model="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter New email" height="100px">
+                                        <button type="submit" class="btn-submit" v-on:click="updateEmail">Update Email!</button>
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputPassword1">Change Password</label>
-                                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter New Password">
+                                        <input type="password" v-model="newpassword" class="form-control" id="exampleInputPassword1" placeholder="Enter New Password">
+                                        <button type="submit" class="btn-submit" v-on:click="updatePassword">Update Password!</button>
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputPassword1">Change Account Name </label>
-                                        <input class="form-control" id="NewAccountName" placeholder="Enter New Name">
+                                        <input class="form-control" v-model="newName" id="NewAccountName" placeholder="Enter New Name">
+                                        <button type="submit" v-on:click="updateName" class="btn-submit">Update Name!</button>
                                     </div>
-                                    <button type="submit" class="btn btn-primary">Change Information!</button>
                                 </form>
                             </div>
                             </div>
@@ -235,8 +237,67 @@
             goToDashboard(){
                 this.$router.replace(({name: "UserHome"}))
             },
-            getDoc(){
-
+            updateEmail() {
+                //TODO BUG: not sure why it returns to home page... for now we will log out user to ensure "safety" lol
+                var u = firebase.auth().currentUser;
+                console.log("new email: "+ this.email);
+                u.updateEmail(this.email).then(function() {
+                    // Update successful.
+                    console.log("update successful")
+                    window.alert("Update Succesful: Please sign back in with new email!")
+                }).catch(function(error) {
+                    // An error happened.
+                    console.log(error)
+                    console.log("shits not working lol")
+                });
+                firebase
+                    .auth()
+                    .signOut()
+                    .then(() =>{
+                        console.log('user has been logged off');
+                    })
+            },
+            updatePassword(){
+                //TODO BUG: not sure why it returns to home page... for now we will log out user to ensure "safety" lol
+                var user = firebase.auth().currentUser;
+                console.log("new password: "+ this.newpassword)
+                user.updatePassword(this.newpassword).then(function() {
+                    // Update successful.
+                    console.log("password update successful")
+                    window.alert("Update Succesful: Please sign back in with new password!")
+                }).catch(function(error) {
+                    // An error happened.
+                    console.log(error)
+                    console.log("shits not working lol")
+                });
+                firebase
+                    .auth()
+                    .signOut()
+                    .then(() =>{
+                        console.log('user has been logged off');
+                    })
+            },
+            updateName(){
+                //TODO BUG: not sure why it returns to home page... for now we will log out user to ensure "safety" lol
+                var user = firebase.auth().currentUser;
+                user.updateProfile({
+                    displayName: this.newName
+                }).then(function() {
+                    // Update successful.
+                    console.log("Name update successful")
+                    console.log("New Name: " + this.user.data.displayName)
+                    window.alert("Update Succesful: Please sign back in!")
+                }).catch(function(error) {
+                    // An error happened.
+                    console.log(error)
+                    console.log("shits not working lol")
+                });
+                firebase
+                    .auth()
+                    .signOut()
+                    .then(() =>{
+                        console.log('user has been logged off');
+                    })
             }
 
         },
@@ -257,7 +318,10 @@
                     PersonType: "",
                     Skills: [],
                     Industry: []
-                }
+                },
+                email: '',
+                newpassword: '',
+                newName: ''
             }
         },
         mounted(){
@@ -289,6 +353,9 @@
 </script>
 
 <style scoped>
+    .btn-submit{
+
+    }
     .hover:hover {
         COLOR: blue; TEXT-DECORATION: none; font-weight: none
     }
