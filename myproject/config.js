@@ -1,10 +1,3 @@
-/*
-var config = {
-    VUE_APP_FIREBASE_APIKEY: 'AIzaSyAbnW0bR4mUtyKTMV14R9jyc_jLzP23Dnoi',
-    VUE_APP_ZOOM_APIKEY: 'Bd7JV-1oRG-n5owlUcvjjA'
-}
-
- */
 
 module.exports = {
     VUE_APP_FIREBASE_APIKEY: 'AIzaSyAbnW0bR4mUtyKTMV14R9jyc_jLzP23Dno',
