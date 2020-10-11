@@ -1,4 +1,5 @@
 const webpack = require('webpack');
+const Dotenv = require('dotenv-webpack')
 module.exports = {
     configureWebpack: {
         plugins: [
@@ -7,7 +8,8 @@ module.exports = {
                 jquery: 'jquery',
                 'window.jQuery': 'jquery',
                 jQuery: 'jquery'
-            })
+            }),
+            new Dotenv()
         ]
     }
 }

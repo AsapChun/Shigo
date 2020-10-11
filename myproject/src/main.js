@@ -8,6 +8,8 @@ import React from 'react';
 import {BootstrapVue, IconsPlugin} from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
+import config from "../config.js";
+
 //import $ from 'jquery';
 // Install BootstrapVue
 Vue.use(BootstrapVue);
@@ -22,7 +24,6 @@ window.$ = $;
 
 Vue.use(LoadScript);
 Vue.config.productionTip = false;
-
 
 
 const scriptLoader = {
@@ -47,10 +48,10 @@ Vue.use({
     Vue.prototype.$scriptLoader = scriptLoader
   }
 })
-
+var firebasekey = config.VUE_APP_FIREBASE_APIKEY;
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAbnW0bR4mUtyKTMV14R9jyc_jLzP23Dno",
+  apiKey: firebasekey,
   authDomain: "onlinecareerfair-4a444.firebaseapp.com",
   databaseURL: "https://onlinecareerfair-4a444.firebaseio.com",
   projectId: "onlinecareerfair-4a444",

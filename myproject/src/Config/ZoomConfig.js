@@ -1,12 +1,13 @@
-const apiKey = {
+import config from "../config.js";
+    const apiKey = {
     signatureEndpoint: 'http://localhost:8080',
-    apiKey: 'Bd7JV-1oRG-n5owlUcvjjA',
+    apiKey: config.VUE_APP_ZOOM_APIKEY,
     meetingNumber: '12345678',
     role: 1,
     leaveUrl:'http://localhost:8080/#/',
     userName: 'WebSdk',
-    userEmail: 'seanchun3@gmail.com',
-    passWord: 'GODofthepanda123'
+    userEmail: config.EMAIL,
+    passWord: config.password
 
 };
 /*

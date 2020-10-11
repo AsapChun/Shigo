@@ -54,11 +54,12 @@
 </template>
 
 <script>
+    import config from "../../config.js";
     //import { ZoomMtg } from '@zoomus/websdk';
 
   //import {ZoomLib} from '@node_modules/@zoomus/websdk/dist/lib/'
-    var API_KEY = 'Bd7JV-1oRG-n5owlUcvjjA';
-    var API_SECRECT = 'cYjqYGaCH6atevG2qYFjuLVkYBo1clOhdrF5';
+    var API_KEY = config.VUE_APP_ZOOM_APIKEY;
+    var API_SECRECT = config.ZOOM_API_SECRECT;
     //const zoomMeeting = document.getElementById("zmmtg-root");
     export default {
         name: "CreateZoomMeeting",
@@ -189,7 +190,7 @@
                                         meetingNumber: '74083761368',
                                         userName: 'schun',
                                         signature: res.result,
-                                        apiKey: 'Bd7JV-1oRG-n5owlUcvjjA',
+                                        apiKey: config.VUE_APP_ZOOM_APIKEY,
                                         passWord: '0XBiFi',
                                         success() {
                                             console.log('join meeting success');
