@@ -280,12 +280,13 @@
             updateName(){
                 //TODO BUG: not sure why it returns to home page... for now we will log out user to ensure "safety" lol
                 var user = firebase.auth().currentUser;
+                console.log("new Name: "+ this.newName);
                 user.updateProfile({
                     displayName: this.newName
                 }).then(function() {
                     // Update successful.
                     console.log("Name update successful")
-                    console.log("New Name: " + this.user.data.displayName)
+                    //console.log("New Name: " + this.user.data.displayName)
                     window.alert("Update Succesful: Please sign back in!")
                 }).catch(function(error) {
                     // An error happened.
