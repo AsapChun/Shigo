@@ -48,7 +48,7 @@
                            <li class="nav-item">
                                <a class="nav-link" href="#">
                                    <span data-feather="shopping-cart"></span>
-                                   <div class="hover">
+                                   <div class="hover" @click="goToMessagingComponent">
                                        Messages
                                    </div>
                                </a>
@@ -236,6 +236,9 @@
         methods:{
             goToDashboard(){
                 this.$router.replace(({name: "UserHome"}))
+            },
+            goToMessagingComponent(){
+                this.$router.replace({name: "MessagingComponent"})
             },
             updateEmail() {
                 //TODO BUG: not sure why it returns to home page... for now we will log out user to ensure "safety" lol

@@ -48,7 +48,7 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="#">
                                         <span data-feather="shopping-cart"></span>
-                                        <div class="hover">
+                                        <div class="hover" @click="goToMessagingComponent">
                                             Messages
                                         </div>
                                     </a>
@@ -56,7 +56,7 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="#">
                                         <span data-feather="users"></span>
-                                        <div class="hover">
+                                        <div class="hover" >
                                             Connections
                                         </div>
                                     </a>
@@ -188,6 +188,9 @@
             },
             goToSettingComponent(){
               this.$router.replace(({name: "SettingsComponent"}))
+            },
+            goToMessagingComponent(){
+              this.$router.replace({name: "MessagingComponent"})
             },
             createZoomMeeting(){
                 //this.$router.replace(({name: "CreateZoomMeeting"}))

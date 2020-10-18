@@ -9,7 +9,7 @@ import WebPortal from "@/components/WebPortal";
 //import CreateZoomMeeting from "@/components/Zoom /CreateZoomMeeting";
 import Meeting from "@/components/Zoom /Meeting";
 import SettingComponent from "@/components/Dashboard-components/Settings-Component";
-
+import MessagingComponent from "@/components/Dashboard-components/Messaging-Component";
 /* eslint-disable */
 Vue.use(VueRouter);
 
@@ -71,6 +71,11 @@ Vue.use(VueRouter);
       path: '/Dashboard-components/Settings-Component',
       name: 'SettingsComponent',
       component: SettingComponent
+    },
+    {
+      path: '/Dashboard-components/Messaging-Component',
+      name: 'MessagingComponent',
+      component: MessagingComponent
     }
 ];
 
