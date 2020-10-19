@@ -52,13 +52,13 @@ var firebasekey = config.VUE_APP_FIREBASE_APIKEY;
 
 const firebaseConfig = {
   apiKey: firebasekey,
-  authDomain: "onlinecareerfair-4a444.firebaseapp.com",
-  databaseURL: "https://onlinecareerfair-4a444.firebaseio.com",
-  projectId: "onlinecareerfair-4a444",
-  storageBucket: "onlinecareerfair-4a444.appspot.com",
-  messagingSenderId: "47255244547",
-  appId: "1:47255244547:web:8a5eea5102a34c60532336",
-  measurementId: "G-EDK1PB0X68"
+  authDomain: config.authDomain,
+  databaseURL: config.databaseURL,
+  projectId: config.projectId,
+  storageBucket: config.storageBucket,
+  messagingSenderId: config.messagingSenderId,
+  appId: config.appId,
+  measurementId: config.measurementId
 };
 
 
