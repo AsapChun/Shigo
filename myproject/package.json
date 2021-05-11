@@ -17,7 +17,7 @@
     "firebase": "^7.21.0",
     "gapi": "0.0.3",
     "jquery": "^3.5.1",
-    "lodash": "^4.17.14",
+    "lodash": "^4.17.21",
     "react": "16.8.6",
     "react-dom": "16.8.6",
     "react-redux": "7.1.0",
